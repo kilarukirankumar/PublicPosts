@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">Public Posts</string>
+    <string name="login_screen_name">Login</string>
+    <string name="username_label">User Name</string>
+    <string name="password_label">Password</string>
+    <string name="username_req_error">User name is required</string>
+    <string name="password_req_error">Password is required</string>
+    <string name="password_validation_error">
+        The password should 7+ characters long(1+ number, 1+ uppercase letter and no special characters)
+    </string>
+    <string name="login_btn_text">Login</string>
+    <string name="logout_text">Logout</string>
+</resources>

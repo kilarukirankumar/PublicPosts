@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        is-multidex="true"
+        jar="/Users/kirankumarkilaru/.android/build-cache/90d4f95104095d1ecb334084e66bc8a4128409f1/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="4fbaa84da04e25bb7812592814026101d20dbc91">
+        <dex dex="/Users/kirankumarkilaru/AndroidStudioProjects/PublicPosts/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_82540c0267c46aeb2ef0b4ae36f167c0ed3aaa15/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/kirankumarkilaru/AndroidStudioProjects/PublicPosts/app/build/intermediates/incremental-runtime-classes/debug/instant-run.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="510aa6efc159983dfbffa676a0dae37568c0a46f">
+        <dex dex="/Users/kirankumarkilaru/AndroidStudioProjects/PublicPosts/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run_d336a942d0a21526fdf7c16e22e3242b8f150735/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/kirankumarkilaru/.gradle/caches/modules-2/files-2.1/com.squareup.haha/haha/2.0.3/640a438d2d415c056ca6a673ac26b183b044e160/haha-2.0.3.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="640a438d2d415c056ca6a673ac26b183b044e160">
+        <dex dex="/Users/kirankumarkilaru/AndroidStudioProjects/PublicPosts/app/build/intermediates/transforms/dex/debug/folders/1000/10/haha-2.0.3_6f297f58d6edaa41e123f05b2d4fe29614078a8f/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/kirankumarkilaru/.gradle/caches/modules-2/files-2.1/com.squareup.leakcanary/leakcanary-analyzer/1.5.1/77e5213b6ac5b323616a7bd283763bd60c0b3f6f/leakcanary-analyzer-1.5.1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="77e5213b6ac5b323616a7bd283763bd60c0b3f6f">
+        <dex dex="/Users/kirankumarkilaru/AndroidStudioProjects/PublicPosts/app/build/intermediates/transforms/dex/debug/folders/1000/10/leakcanary-analyzer-1.5.1_ebb27cd4fbba497c254d9c4df8afe3a6e488be2b/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/kirankumarkilaru/AndroidStudioProjects/PublicPosts/app/build/intermediates/incremental-classes/debug/instant-run-bootstrap.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="e23a810e14422065de09c31cccc3b48e6432163b">
+        <dex dex="/Users/kirankumarkilaru/AndroidStudioProjects/PublicPosts/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run-bootstrap_53a34365e1f2724e400c71295c23b470756272c3/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/kirankumarkilaru/.gradle/caches/modules-2/files-2.1/com.squareup.leakcanary/leakcanary-watcher/1.5.1/3d719b7e20a11415d409e6c29a34a643c560fc6f/leakcanary-watcher-1.5.1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="3d719b7e20a11415d409e6c29a34a643c560fc6f">
+        <dex dex="/Users/kirankumarkilaru/AndroidStudioProjects/PublicPosts/app/build/intermediates/transforms/dex/debug/folders/1000/10/leakcanary-watcher-1.5.1_ba3a69a018f9233d72cec5999a9b60810a222734/classes.dex" />
+    </item>
+
+</items>
