@@ -1,7 +1,0 @@
-#Thu May 04 16:23:14 EDT 2017
-base.0=/Users/kirankumarkilaru/AndroidStudioProjects/PublicPosts/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run_d336a942d0a21526fdf7c16e22e3242b8f150735
-renamed.1=classes2.dex
-renamed.0=classes.dex
-file.1=/Users/kirankumarkilaru/AndroidStudioProjects/PublicPosts/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run-bootstrap_53a34365e1f2724e400c71295c23b470756272c3/classes.dex
-base.1=/Users/kirankumarkilaru/AndroidStudioProjects/PublicPosts/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run-bootstrap_53a34365e1f2724e400c71295c23b470756272c3
-file.0=/Users/kirankumarkilaru/AndroidStudioProjects/PublicPosts/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run_d336a942d0a21526fdf7c16e22e3242b8f150735/classes.dex
