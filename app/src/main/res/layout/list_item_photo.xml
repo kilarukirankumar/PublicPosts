@@ -5,7 +5,7 @@
 
     <data>
         <variable
-            name="photo"
+            name="viewModel"
             type="com.kilarukiran.publicposts.ViewModels.ItemPhotoViewModel" />
     </data>
 
@@ -36,7 +36,7 @@
                 android:id="@+id/photo"
                 card_view:layout_constraintTop_toTopOf="parent"
                 card_view:layout_constraintLeft_toLeftOf="parent"
-                android:src="@{photo.imageUrl}"/>
+                android:src="@{viewModel.imageUrl}"/>
 
             <TextView
                 android:layout_width="wrap_content"
@@ -46,7 +46,7 @@
                 card_view:layout_constraintLeft_toRightOf="@id/photo"
                 card_view:layout_constraintTop_toTopOf="@id/photo"
                 android:textStyle="bold"
-                android:text="@{photo.name}"
+                android:text="@{viewModel.name}"
                 android:textAppearance="@style/TextAppearance.AppCompat.Medium"
                 />
 
@@ -59,7 +59,7 @@
                 card_view:layout_constraintLeft_toRightOf="@id/photo"
                 card_view:layout_constraintTop_toBottomOf="@id/name"
                 android:textStyle="normal"
-                android:text="@{photo.createdAt}"
+                android:text="@{viewModel.createdAt}"
                 android:textAppearance="@style/TextAppearance.AppCompat.Small"
                 />
 
@@ -70,7 +70,7 @@
                 card_view:layout_constraintTop_toBottomOf="@id/photo"
                 card_view:layout_constraintLeft_toLeftOf="@id/photo"
                 android:textStyle="normal"
-                android:htmlText="@{photo.description}"
+                android:htmlText="@{viewModel.description}"
                 android:textAppearance="@style/TextAppearance.AppCompat.Small"
                 />
 

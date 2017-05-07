@@ -16,11 +16,10 @@ import com.kilarukiran.publicposts.ResponseModel.PhotosResponse;
 import java.util.Collections;
 import java.util.List;
 
-import retrofit2.adapter.rxjava.HttpException;
 import rx.Subscriber;
-import rx.Subscription;
 import rx.android.schedulers.AndroidSchedulers;
 import rx.functions.Func1;
+import rx.subscriptions.CompositeSubscription;
 
 /**
  * Created by kirankumarkilaru on 03/05/17.
@@ -31,7 +30,7 @@ public class PostsViewModel extends BaseObservable implements ViewModel {
     private final static  String TAG = "PostsViewModel";
 
     private Context mContext;
-    private Subscription mSubscription;
+    private CompositeSubscription mSubscriptions;
     private DataListener dataListener;
 
     private List<Photo> photos;
@@ -51,8 +50,8 @@ public class PostsViewModel extends BaseObservable implements ViewModel {
 
     @Override
     public void destroy() {
-        if(mSubscription != null && !mSubscription.isUnsubscribed()) mSubscription.unsubscribe();
-        mSubscription = null;
+        if(mSubscriptions != null && !mSubscriptions.isUnsubscribed()) mSubscriptions.unsubscribe();
+        mSubscriptions = null;
         dataListener = null;
         mContext = null;
     }
@@ -101,21 +100,25 @@ public class PostsViewModel extends BaseObservable implements ViewModel {
         setRecyclerViewVisibility(View.GONE);
         setInfoMsgVisibility(View.GONE);
         setProgressbarVisibility(View.GONE);
-        if(mSubscription != null && !mSubscription.isUnsubscribed()) mSubscription.unsubscribe();
+        if(mSubscriptions != null && !mSubscriptions.isUnsubscribed()) mSubscriptions.unsubscribe();
+        if(mSubscriptions == null) mSubscriptions = new CompositeSubscription();
         PublicPostsApplication publicPostsApplication = PublicPostsApplication.get(mContext);
         final PhotosService photosService = publicPostsApplication.getPhotosService();
-        mSubscription = photosService.getPhotos("popular","nature","NE10NBHXbYyLy1MHT483YCmUnQmSkHUhNUZuOTV9")
-                        .observeOn(AndroidSchedulers.mainThread())
+        mSubscriptions.add(photosService.getPhotos("popular","nature","NE10NBHXbYyLy1MHT483YCmUnQmSkHUhNUZuOTV9")
                         .subscribeOn(publicPostsApplication.defaultSubscribeScheduler())
+                        .observeOn(publicPostsApplication.defaultSubscribeScheduler())
                         .map(new Func1<PhotosResponse, List<Photo>>() {
                             @Override
                             public List<Photo> call(PhotosResponse photosResponse) {
                                 return photosResponse.getPhotos();
                             }
                         })
+                        .observeOn(AndroidSchedulers.mainThread())
                         .subscribe(new Subscriber<List<Photo>>() {
                             @Override
                             public void onCompleted() {
+
+                                dataListener.onPhotosChanged(photos);
 
                                 if(!photos.isEmpty()){
                                     setProgressbarVisibility(View.GONE);
@@ -128,6 +131,8 @@ public class PostsViewModel extends BaseObservable implements ViewModel {
                                     setProgressbarVisibility(View.GONE);
                                 }
                             }
+
+
 
                             @Override
                             public void onError(Throwable e) {
@@ -142,12 +147,7 @@ public class PostsViewModel extends BaseObservable implements ViewModel {
                                 Collections.sort(photos, new PhotoDateComparator());
                                 PostsViewModel.this.photos = photos;
                             }
-                        });
-    }
-
-
-    private static boolean isHttp404(Throwable error) {
-        return error instanceof HttpException && ((HttpException) error).code() == 404;
+                        }));
     }
 
     public interface DataListener {

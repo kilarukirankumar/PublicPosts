@@ -19,6 +19,17 @@ allprojects {
     }
 }
 
+ext{
+    supportLibVersion = "25.3.1"
+    retrofitVersion = "2.2.0"
+    jUnitVersion = "4.12"
+    picassoVersion = "2.5.2"
+    rxAndroidVersion = "1.2.1"
+    constLayoutVersion = "1.0.2"
+    leakCanaryVersion = "1.5.1"
+    testLibVersion = "2.2.2"
+}
+
 task clean(type: Delete) {
     delete rootProject.buildDir
 }

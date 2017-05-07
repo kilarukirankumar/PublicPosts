@@ -28,6 +28,7 @@ public class PhotosActivity extends AppCompatActivity implements PostsViewModel.
 
     PostsViewModel mPostsViewModel;
     ActivityPhotosBinding mActivityPhotosDataBinding;
+
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -98,7 +99,6 @@ public class PhotosActivity extends AppCompatActivity implements PostsViewModel.
     @Override
     public void onBackPressed() {
         doLogout();
-        //super.onBackPressed();
     }
 
     @Override

@@ -31,6 +31,7 @@ public class ItemPhotoAdapter extends  RecyclerView.Adapter<ItemPhotoAdapter.Pho
 
     public void setPhotos(List<Photo> photos){
         this.photos = photos;
+        notifyDataSetChanged();
     }
 
     @Override
@@ -56,18 +57,15 @@ public class ItemPhotoAdapter extends  RecyclerView.Adapter<ItemPhotoAdapter.Pho
 
     public static class PhotoViewHolder extends RecyclerView.ViewHolder{
         final ListItemPhotoBinding binding;
-
         public PhotoViewHolder(ListItemPhotoBinding binding){
             super(binding.cardView);
             this.binding = binding;
         }
-
         void bindRepository(Photo photo) {
-            if (binding.getPhoto() == null) {
-                binding.setPhoto(new ItemPhotoViewModel(itemView.getContext(), photo));
-            } else {
-                binding.getPhoto().setPhoto(photo);
-            }
+            if(binding.getViewModel() == null)
+                binding.setViewModel(new ItemPhotoViewModel(itemView.getContext(), photo));
+            else
+                binding.getViewModel().setPhoto(photo);
         }
     }
 }

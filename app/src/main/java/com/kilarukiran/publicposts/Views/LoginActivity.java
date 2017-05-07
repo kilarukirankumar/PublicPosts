@@ -1,9 +1,9 @@
 package com.kilarukiran.publicposts.Views;
 
 import android.databinding.DataBindingUtil;
+import android.os.Bundle;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 
 import com.kilarukiran.publicposts.Models.Login;
 import com.kilarukiran.publicposts.R;
@@ -14,21 +14,35 @@ public class LoginActivity extends AppCompatActivity {
 
     Login mLogin;
     LoginViewModel mLoginViewModel;
+    LoginActivityBinding binding;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        LoginActivityBinding binding = DataBindingUtil.setContentView(this, R.layout.login_activity);
+        binding = DataBindingUtil.setContentView(this, R.layout.login_activity);
         if(savedInstanceState == null) {
             mLogin = new Login();
         }
         else{
             mLogin = savedInstanceState.getParcelable("mLogin");
         }
-        ActionBar actionBar = getSupportActionBar();
-        actionBar.setTitle(getString(R.string.login_screen_name));
         mLoginViewModel = new LoginViewModel(mLogin, this);
         binding.setLogin(mLoginViewModel);
+
+        ActionBar actionBar = getSupportActionBar();
+        actionBar.setTitle(getString(R.string.login_screen_name));
+    }
+
+
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
     }
 
     @Override

@@ -27,6 +27,7 @@ public class ItemPhotoViewModel extends BaseObservable implements ViewModel {
 
     public void setPhoto(Photo photo){
         this.photo = photo;
+        notifyChange();
     }
 
     @Bindable
@@ -49,6 +50,7 @@ public class ItemPhotoViewModel extends BaseObservable implements ViewModel {
         notifyPropertyChanged(com.kilarukiran.publicposts.BR.imageUrl);
     }
 
+    @SuppressWarnings("deprecation")
     @BindingAdapter("android:htmlText")
     public  static void setHtml(TextView view, String text){
         if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.N)
@@ -77,7 +79,7 @@ public class ItemPhotoViewModel extends BaseObservable implements ViewModel {
 
     @Bindable
     public String getCreatedAt() {
-        SimpleDateFormat dateFormat = new SimpleDateFormat("MM/dd/yyyy HH:mm:ss");
+        SimpleDateFormat dateFormat = new SimpleDateFormat("MM/dd/yyyy HH:mm:ss z");
         return "Created At: " + dateFormat.format(photo.getCreatedAt());
     }
 

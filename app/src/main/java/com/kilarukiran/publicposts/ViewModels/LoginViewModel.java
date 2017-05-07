@@ -49,7 +49,7 @@ public class LoginViewModel extends BaseObservable implements ViewModel {
 
     @Bindable
     public String getPassword() {
-        return mLogin.getUserName();
+        return mLogin.getPassword();
     }
 
     public void setPassword(String password) {
@@ -72,7 +72,7 @@ public class LoginViewModel extends BaseObservable implements ViewModel {
     }
 
     private void validatePassword(){
-        String password = mLogin.getPassword();
+        String password = getPassword();
         if(password == null || password.length() == 0){
             mLogin.setPasswordError(mContext.getString(R.string.password_req_error));
         }
